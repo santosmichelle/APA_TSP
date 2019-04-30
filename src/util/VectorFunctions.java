@@ -1,13 +1,15 @@
-/**
- * 
- */
 package util;
+
+import main.Route;
 
 /**
  * @author Bianca Amorim
  *
  *
  */
+
+//Funções para auxiliar na manipulação de vetores ao longo do processo
+
 public class VectorFunctions {
 	
 	public static void swap(Route[] list, int i, int j) {

@@ -9,16 +9,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import util.VectorFunctions;
+
 /**
  * @author Bianca Amorim
  *
  *
  */
+
+//Classe para carregar e tratar o arquivo
 public class File {
 	private final Path loadPath;
 	private final Charset utf8 = StandardCharsets.UTF_8;
 	
-	public File(String LoadPath) {
+	public File(String loadPath) {
 		this.loadPath = Paths.get(loadPath);
 	}
 	
@@ -27,11 +31,11 @@ public class File {
 		try(BufferedReader reader = Files.newBufferedReader(loadPath, utf8)){
 			String line = null;
 			int matrixSize = Integer.parseInt(reader.readLine());
-			matrix = new Long[matrixSize][matrixSize];
+			matrix = new long[matrixSize][matrixSize];
 			VectorFunctions.initializeMatrix(matrix);
-			for (int i = 0; id = 0; (line = reader.readLine()) ! null; i++) {
+			for (int i = 0, id = 0; (line = reader.readLine()) != null; i++) {
 				String[] param = line.split(" |\t");
-				for(int j = 0; k = 0; k < param.length; k++; j++; id++) {
+				for(int j = 0, k = 0; k < param.length; k++, j++, id++) {
 					matrix[i][j] = Long.parseLong(param[k]);
 				}
 			}

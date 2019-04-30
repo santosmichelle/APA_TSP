@@ -5,8 +5,11 @@ package util;
  *
  *
  */
+
+//Heurística construtiva: Vizinho mais próximo
+
 public interface ConstructiveHeuristic {
 	
-	void solutionTSP(Long[][] graph, int[] vector TSS);
+	void solutionTSP(long[][] graph, int[] vectorTSS);
 
 }

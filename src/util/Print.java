@@ -5,8 +5,12 @@ package util;
  *
  *
  */
+
+//Funções para exibição dos resultados e matrizes 
+
 public class Print {
 	
+	//Exibe a matriz
 	public static void printMatrix(long[][] matrix) {
 		System.out.println("\n\n Matriz. Tamanho: " + matrix.length);
 		for (int i = 0; i < matrix.length; i++) {
@@ -17,6 +21,7 @@ public class Print {
 		}
 	}
 	
+	//Exibe o vetor
 	public static void printVector(int[] vector, String name) {
 		System.out.print("\n\n\n"+ name +". Tamanho: " + vector.length + "\n[ ");
 		for(int i = 0; i < vector.length; i++) {
@@ -25,6 +30,7 @@ public class Print {
         System.out.print("]");
 	}
 	
+	//Exibe o resultado
 	public static void printResult(long[][] matrix, int[] tss, String name) {
 		long result = 0;
 		System.out.println("\n\n"+ name + ". Tamanho: " + tss.length);

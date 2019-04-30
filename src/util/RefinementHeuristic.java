@@ -1,12 +1,22 @@
 package util;
 
+import main.Route;
+
 /**
  * @author Bianca Amorim
  *
  *
  */
+
+//Heurística de refinamento: descida em vizinhança variável
+
 public interface RefinementHeuristic {
 	
-	void refine(Route r, Long[][] graph, int[][] route);
+	/**
+	 * @param r
+	 * @param graph
+	 * @param route
+	 */
+	void refine(Route r, long[][] graph, int[] route);
 
 }
