@@ -10,6 +10,9 @@ import util.VectorFunctions;
  *
  *
  */
+
+// Movimento de vizinhaça Swap: troca dois vértices de posição na rota
+
 public class Swap extends NeighborhoodStructure {
 	
 	@Override
@@ -43,6 +46,7 @@ public class Swap extends NeighborhoodStructure {
 		return (bestResult < initialResult) ? this : new Reinsertion();
 	}
 	
+	// Troca entre dois vértices pertencentes a uma rota 
 	private void exchange(int[] list, int i, int j) {
 		int temp = list[j];
 		list[j] = list[i];

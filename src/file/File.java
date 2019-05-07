@@ -33,9 +33,9 @@ public class File {
 			int matrixSize = Integer.parseInt(reader.readLine());
 			matrix = new long[matrixSize][matrixSize];
 			VectorFunctions.initializeMatrix(matrix);
-			for (int i = 0, id = 0; (line = reader.readLine()) != null; i++) {
+			for (int i = 0; (line = reader.readLine()) != null; i++) {
 				String[] param = line.split(" |\t");
-				for(int j = 0, k = 0; k < param.length; k++, j++, id++) {
+				for(int j = 0, k = 0; k < param.length; k++, j++) {
 					matrix[i][j] = Long.parseLong(param[k]);
 				}
 			}

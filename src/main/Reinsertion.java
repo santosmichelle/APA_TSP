@@ -7,6 +7,9 @@ import util.VectorFunctions;
  *
  *
  */
+ 
+// Movimento de vizinhança Reinsertion: remove vértices da rota e reinsere na melhor posição
+
 public class Reinsertion extends NeighborhoodStructure {
 	
 	@Override
@@ -40,6 +43,7 @@ public class Reinsertion extends NeighborhoodStructure {
 		return (bestResult < initialResult) ? new Swap(): null;
 	}
 	
+	// Permutação entre dois vértices da rota
 	private void insert(int[] list, int i, int j) {
 		int temp = list[i];
 		if(i < j) {

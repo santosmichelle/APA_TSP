@@ -13,6 +13,8 @@ import util.ConstructiveHeuristic;
 *  ainda não visitada cuja distância à última cidade visitada é a menor possível. 
 *  O procedimento de construção termina quando todas as cidades forem visitadas, 
 *  situação na qual é feita a ligação entre a última cidade visitada e a cidade origem.
+*  
+*  Gera solução inicial
 */
 
 public class NNH implements ConstructiveHeuristic {

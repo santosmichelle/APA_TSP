@@ -34,6 +34,7 @@ public class Route {
 		}
 	}
 	
+	// Melhor rota
 	public int[] getBestRoute() {
 		int[] vector = new int[solutions[0].length];
 		for(int i = 0; i < vector.length; i++) {
