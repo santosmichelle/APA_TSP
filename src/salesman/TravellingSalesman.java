@@ -20,20 +20,22 @@ import main.VND;
 public class TravellingSalesman {
 	
 	private static ArrayList<Long> times;
-	static long startTime;
-	static long endTime;
-	static long duration;
+	static long startTime;  // Tempo inicial
+	static long endTime; // Tempo final
+	static long duration; // Duração: tempo final - tempo inicial
+	static long meanTime = 0; // Média de tempo
 	
 	public static void main(String[] args) {
 		
+		ControllerTSP control = new ControllerTSP();
+		times = new ArrayList<>();
+		
+		// Matriz original
+		control.printMatrixTSP();				
+				
 		for(int i = 1; i < 11; i++) {
 			startTime = System.currentTimeMillis();
-			
-			ControllerTSP control = new ControllerTSP();
-			
 			System.out.println("\n>>>>> EXECUÇÃO " + i + " <<<<<");
-			// Matriz original
-			//control.printMatrixTSP();
 			
 			//PRIMEIRA ETAPA: Heurísticas (VND E NNH)
 			//control.controlTSP(new NNH(), new VND());	
@@ -57,39 +59,17 @@ public class TravellingSalesman {
 			duration = endTime - startTime;
 			NumberFormat formatter = new DecimalFormat("#0.00000");
 			System.out.println("\nTEMPO DE EXECUÇÃO: ");
-			System.out.println(formatter.format((duration)/1000d) + " segundos" + " / " + duration + " milisegundos");
+			System.out.println(formatter.format((duration)/1000d) + " segundos" + " / " + duration + " milissegundos");
+			
+			times.add(duration);
+			
+			for(long time : times) {
+				meanTime += time;
+		    }
+			
+			meanTime = meanTime/times.size();	 //Resultado da média de tempo de execução		
 		}	
+		
+		System.out.println("\nMÉDIA DE TEMPO: " + meanTime + " milissegundos");
 	}
-	
-	public void Time() {
-		 this.times = new ArrayList<>();
-   }
-	
-	public void addTime() {
-		this.times.add(TravellingSalesman.duration);
-	}
-	
-	  public void addTime(long time) {
-        this.times.add(time);
-    }
- 
-	public long getMediaOfTimes() {
-	    long result = 0;
-	    for(long time : times) {
-	        result += time;
-	    }
-	
-	    return result;
-    }
-	
-	public String generateMediaOfTimes() {
-        StringBuilder string = new StringBuilder();
-        long result = this.getMediaOfTimes();
-
-        string.append("MÉDIA DE TEMPO:  ");
-        result = result/times.size();
-        string.append(" ").append(result);
-
-        return string.toString();
-    }
 }

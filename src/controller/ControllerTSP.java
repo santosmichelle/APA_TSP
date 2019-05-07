@@ -19,7 +19,7 @@ import util.VectorFunctions;
  */
 public class ControllerTSP {
 	
-	private final String FILE_ORIGEM = "src/instancias_teste/tsp6_20.txt";  // Inserir caminho do arquivo
+	private final String FILE_ORIGEM = "src/instancias_teste/tsp8_50.txt";  // Inserir caminho do arquivo
 	private final long[][] matrix;
 	private Route r; //Objeto para guardar informações sobre as rotas 
 	private int[] vectorTSS; // TSS = Travelling Salesman Solution -> Primeira solução
